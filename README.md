@@ -38,7 +38,7 @@ Todas las rutas son relativas, por lo que funciona tanto en un repositorio de pr
 | Feed de Instagram | `js/config.js` → `instagramFeed.feedId` (ver sección *Instagram*) | Pendiente |
 | Texto de presentación | `index.html`, comentario `✏️ TEXTO DE PRESENTACIÓN EDITABLE` | Texto base editable |
 | Ebooks (nombres, precios, portadas) | `js/ebooks.js` | Pendiente (se muestran tarjetas «Próximamente») |
-| Fotografías de «Mi enfoque» | `assets/images/bowl-antiinflamatorio.webp` y `alimentos-naturales.webp` | Tomadas del recetario; se recomienda reemplazarlas por fotos en alta resolución (mín. 1200 px) con el mismo nombre |
+| Fotografías de «Mi enfoque» | `assets/images/bowl-antiinflamatorio.webp` y `alimentos-naturales.webp` | Fotos de stock en 1800 px (WebP). Se pueden sustituir por fotos propias con el mismo nombre. Licencia [Pexels](https://www.pexels.com/license/) (uso comercial, sin atribución obligatoria). |
 
 > El número de WhatsApp solo lleva dígitos con código de país, sin `+`, espacios ni el `0` inicial: `0991234567` → `593991234567`.
 
