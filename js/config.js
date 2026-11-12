@@ -12,28 +12,31 @@ window.SITE_CONFIG = {
     tagline: "Nutrición funcional y digestiva",
   },
 
-  /* -----------------------------------------------------------------------
-     ⚠️  DATO PROVISIONAL · PENDIENTE DE REEMPLAZAR  ⚠️
-     El número +593 99 999 9999 es SOLO DE EJEMPLO.
-     Reemplázalo por el WhatsApp real de Milenca:
+  /* WhatsApp de Milenca. Se usa en TODOS los botones de WhatsApp del sitio.
        - number:  solo dígitos, con código de país y SIN "+", espacios ni el 0
-                  inicial del celular. Ej.: 0991234567  ->  "593991234567"
-       - display: cómo se muestra el número en pantalla.
-     Cuando lo reemplaces, cambia isPlaceholder a false.
-     ----------------------------------------------------------------------- */
+                  inicial del celular. Ej.: 0980549220  ->  "593980549220"
+       - display: cómo se muestra el número en pantalla. */
   whatsapp: {
-    number: "593999999999",          // ⚠️ PROVISIONAL – REEMPLAZAR
-    display: "+593 99 999 9999",     // ⚠️ PROVISIONAL – REEMPLAZAR
-    isPlaceholder: true,             // ⚠️ Cambiar a false al poner el número real
+    number: "593980549220",
+    display: "+593 98 054 9220",
   },
 
   instagram: {
     user: "@milencanutricion",
     url: "https://www.instagram.com/milencanutricion/",
+    /* Publicaciones que se muestran en el Inicio ("Sígueme en Instagram"), en orden.
+       La miniatura de cada una es un archivo en assets/images/:
+       inicio-instagram-1.webp, inicio-instagram-2.webp e inicio-instagram-3.webp */
+    posts: [
+      "https://www.instagram.com/p/DbFSF-hHGQl/",
+      "https://www.instagram.com/p/DVB6BbiD9PY/",
+      "https://www.instagram.com/p/DfD904mlQLx/",
+    ],
   },
 
-  /* Enlace único de agendamiento (Google Calendar). Todos los botones
-     "Agendar" del sitio usan este valor. */
+  /* Agendador de Google Calendar en una pestaña nueva. Solo lo usa el enlace
+     "¿No se muestra el calendario? Ábrelo en una nueva pestaña". Los botones
+     "Agendar" bajan a la sección "Agenda conmigo", donde está incrustado. */
   calendarUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0I4gac_Pndn903UnLJBmKj-bqh4R9ty13rADWb9HGRUvhSXWnuFN1VwnufF_XWvlUgAp-SRGx-?fbclid=PAT01DUAVeDKtleHRuA2FlbQIxMABwZG9mAnNydGMGYXBwX2lkDzU2NzA2NzM0MzM1MjQyNwABp3yrIDY3u58mloZVPxoFfBhFBrBRPgVwMKOdrnq_lYJBividmystNfc4xSGf_aem_o03YlVkPK89z_mvOr9Tifw",
 
@@ -41,21 +44,6 @@ window.SITE_CONFIG = {
      Es el mismo agendador; "?gv=true" es el formato de Google para incrustarlo. */
   calendarEmbedUrl:
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0I4gac_Pndn903UnLJBmKj-bqh4R9ty13rADWb9HGRUvhSXWnuFN1VwnufF_XWvlUgAp-SRGx-?gv=true",
-
-  /* -----------------------------------------------------------------------
-     ⚠️  PENDIENTE · FEED DE INSTAGRAM (últimas publicaciones)
-     Instagram no permite mostrar publicaciones en una web estática sin un
-     servicio intermedio conectado a la cuenta. Se usa Behold (behold.so):
-       1. Crea una cuenta en https://behold.so y conecta @milencanutricion
-          (debe ser una cuenta profesional de Instagram: Creador o Empresa).
-       2. Crea un feed, elige el diseño (por ej. cuadrícula) y copia su "Feed ID".
-       3. Pégalo abajo en feedId. Las publicaciones aparecerán solas en el Inicio.
-     Mientras feedId esté vacío, se muestra un bloque que enlaza al perfil.
-     ----------------------------------------------------------------------- */
-  instagramFeed: {
-    provider: "behold",
-    feedId: "",                      // ⚠️ PENDIENTE – pegar aquí el Feed ID de Behold
-  },
 
   /* Dirección: line1 y line2 se muestran en Inicio (modalidad presencial),
      Contacto y el pie de página de todas las páginas. Si cambias la dirección,
@@ -73,9 +61,9 @@ window.SITE_CONFIG = {
     general:
       "Hola Milenca, me gustaría recibir información sobre tus servicios de nutrición.",
     metaReset:
-      "Hola Milenca, quiero comenzar el Método Meta Reset. ¿Podrías darme más información sobre el programa, su valor y la disponibilidad para empezar?",
+      "Hola Milenca, quiero comenzar el Método Meta Reset. ¿Podrías darme más información sobre el programa y la disponibilidad para empezar?",
     esencial:
-      "Hola Milenca, quiero elegir el Plan Esencial. ¿Podrías darme más información sobre el plan, su valor y la disponibilidad para empezar?",
+      "Hola Milenca, quiero elegir el Plan Esencial. ¿Podrías darme más información sobre el plan y la disponibilidad para empezar?",
     ebook:
       "Hola Milenca, estoy interesado/a en adquirir el ebook {ebook}. ¿Podrías darme más información?",
     ebooksNews:

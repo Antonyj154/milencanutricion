@@ -2,10 +2,10 @@
   "name": "Milenca Nutrición",
   "short_name": "Milenca",
   "icons": [
-    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
-    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+    { "src": "general-icono-celular.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "general-icono-app.png", "sizes": "512x512", "type": "image/png" }
   ],
-  "theme_color": "#2A3E3F",
+  "theme_color": "#00483D",
   "background_color": "#F8F6EF",
   "display": "standalone",
   "start_url": "../../index.html"

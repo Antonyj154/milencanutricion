@@ -1,50 +1,98 @@
 # Milenca Nutrición · Sitio web
 
-Sitio web estático (HTML5 + CSS3 + JavaScript vanilla) para **Milenca Nutrición**, listo para publicarse en **GitHub Pages** sin instalar nada ni compilar.
+Sitio web estático (HTML5 + CSS3 + JavaScript vanilla) de **Milenca Nutrición**, listo para publicarse en **GitHub Pages** sin instalar nada ni compilar.
 
 ## Estructura
 
 ```
 /
-├── index.html          Inicio (hero, presentación, Meta Reset, planes, modalidades, CTA)
+├── index.html          Inicio (Quién soy, enfoque, Meta Reset, planes, modalidades, agenda, Instagram)
 ├── ebooks.html         Catálogo de ebooks (se genera desde js/ebooks.js)
-├── contacto.html       Contacto, agendamiento y formulario -> WhatsApp
+├── contacto.html       Contacto, formulario -> WhatsApp y agenda
 ├── .nojekyll           Indica a GitHub Pages que publique los archivos tal cual
-├── css/styles.css      Estilos (paleta, tipografías, componentes, responsive)
-├── js/config.js        ⚙️ CONFIGURACIÓN CENTRAL (teléfono, enlaces, mensajes)
+├── css/styles.css      Estilos (colores, tipografías, componentes, responsive)
+├── js/config.js        ⚙️ CONFIGURACIÓN CENTRAL (WhatsApp, Instagram, calendario, dirección, mensajes)
 ├── js/main.js          Menú móvil, enlaces dinámicos, animaciones, formulario
 ├── js/ebooks.js        📚 Lista de ebooks (agregar / editar productos aquí)
 └── assets/
-    ├── images/         Fotografías (WebP) e imagen para redes (og-image.jpg)
-    └── icons/          Favicon, íconos de app y manifest
+    ├── images/         Todas las fotos y el logo (ver tabla abajo)
+    └── icons/          Íconos de la pestaña del navegador y del celular
 ```
 
 ## Publicar en GitHub Pages
 
-1. Crea un repositorio en GitHub (por ejemplo `milenca-nutricion`).
-2. Sube **todo el contenido de esta carpeta** a la raíz del repositorio (botón *Add file → Upload files*, o con `git push`).
-3. En el repositorio ve a **Settings → Pages**.
-4. En **Build and deployment** elige *Source: Deploy from a branch*, rama `main` y carpeta **`/ (root)`**. Guarda.
-5. En 1–2 minutos el sitio estará en `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/`.
+1. Sube **todo el contenido de esta carpeta** a la raíz del repositorio (*Add file → Upload files*).
+2. En el repositorio ve a **Settings → Pages**.
+3. Elige *Deploy from a branch*, rama `main` y carpeta **`/ (root)`**. Guarda.
+4. En 1–2 minutos el sitio estará en `https://TU-USUARIO.github.io/NOMBRE-DEL-REPOSITORIO/`.
 
-Todas las rutas son relativas, por lo que funciona tanto en un repositorio de proyecto como en un dominio propio.
+## 🖼️ Imágenes: cuál es cuál y cómo cambiarlas
 
-## ⚠️ Datos pendientes de reemplazar
+Todas las imágenes del sitio son archivos dentro de `assets/`. El nombre indica **la página** y **el elemento**. Para cambiar una imagen, sube a la misma carpeta un archivo **con exactamente el mismo nombre** y GitHub reemplaza el anterior. No hay que tocar el código.
 
-| Dato | Dónde | Estado |
+### `assets/images/`
+
+| Archivo | Dónde aparece | Recomendado |
 |---|---|---|
-| Número de WhatsApp `+593 99 999 9999` | `js/config.js` → `whatsapp.number` y `whatsapp.display` (y luego `isPlaceholder: false`) | **PROVISIONAL** |
-| Fotografía de Milenca | Subir `assets/images/milenca.webp` (aparece sola en «Quién soy») | Pendiente |
-| Feed de Instagram | `js/config.js` → `instagramFeed.feedId` (ver sección *Instagram*) | Pendiente |
-| Texto de presentación | `index.html`, comentario `✏️ TEXTO DE PRESENTACIÓN EDITABLE` | Texto base editable |
-| Ebooks (nombres, precios, portadas) | `js/ebooks.js` | Pendiente (se muestran tarjetas «Próximamente») |
-| Fotografías de «Mi enfoque» | `assets/images/bowl-antiinflamatorio.webp` y `alimentos-naturales.webp` | Fotos de stock en 1800 px (WebP). Se pueden sustituir por fotos propias con el mismo nombre. Licencia [Pexels](https://www.pexels.com/license/) (uso comercial, sin atribución obligatoria). |
+| `inicio-logo.png` | Logo del encabezado y del pie de página (en las tres páginas) | PNG cuadrado, 256 px o más |
+| `inicio-presentacion.webp` | Foto de «Hola, soy Milenca» | Vertical, 1000 px de ancho |
+| `inicio-enfoque-principal.webp` | Foto grande (arco) de la sección «Mi enfoque» | 1200 px |
+| `inicio-enfoque-detalle.webp` | Círculo pequeño de la sección «Mi enfoque» | Cuadrada, 720 px |
+| `inicio-metareset-recetario.webp` | Portada del recetario de regalo en la tarjeta de Meta Reset | Vertical (portada) |
+| `inicio-instagram-1.webp`, `-2.webp`, `-3.webp` | Miniaturas de las 3 publicaciones de «Sígueme en Instagram» | Verticales 4:5 (ej. 720 × 900 px) |
+| `inicio-cierre.webp` | Foto del bloque final «Empieza a construir…» | 1200 px |
+| `ebooks-encabezado.webp` | Foto del encabezado de Ebooks, a la derecha del título | Vertical, 900 px de ancho |
+| `ebooks-proximamente.webp` | Foto del bloque «Próximamente» | 1200 px |
+| `ebooks-recetario.webp` | Portada del recetario antiinflamatorio en Ebooks | Vertical (portada) |
+| `contacto-encabezado.webp` | Foto del encabezado de Contacto, a la derecha del título | Vertical, 900 px de ancho |
+| `general-compartir-enlace.jpg` | Imagen que se ve al compartir el enlace por WhatsApp o redes | 1200 × 630 px, JPG |
+| `ebooks/…` | Portadas de cada ebook del catálogo (se indican en `js/ebooks.js`) | Vertical 3:4 |
 
-> El número de WhatsApp solo lleva dígitos con código de país, sin `+`, espacios ni el `0` inicial: `0991234567` → `593991234567`.
+### `assets/icons/`
 
-## Cambiar teléfono, enlaces o mensajes
+| Archivo | Dónde aparece |
+|---|---|
+| `general-icono-pestana.png` | Ícono de la pestaña del navegador (64 px) |
+| `general-icono-celular.png` | Ícono al guardar el sitio en la pantalla de un iPhone (180 px) |
+| `general-icono-app.png` | Ícono al instalar el sitio en Android (512 px) |
 
-Todo está en **`js/config.js`**: WhatsApp, Instagram, enlace del calendario de Google, ubicación y los mensajes predeterminados de WhatsApp. Al cambiarlo ahí se actualizan todos los botones del sitio.
+### Cómo preparar una foto
+
+1. Abre [squoosh.app](https://squoosh.app), sube la foto, elige formato **WebP** (calidad 75–85) y descárgala. Así pesa poco y la página carga rápido.
+2. Ponle el mismo nombre que la imagen que quieres reemplazar (por ejemplo `inicio-presentacion.webp`).
+3. Súbela a `assets/images/` en GitHub y pulsa **Commit changes**.
+4. Si sigues viendo la imagen anterior, recarga con **Ctrl + F5**.
+
+Las fotos se recortan solas para llenar su marco, sin deformarse. Si el recorte no deja ver bien lo importante, se ajusta en el HTML con `object-position` (está indicado junto a cada imagen con un comentario ✏️).
+
+Los dibujos de hojas, destellos e íconos pequeños no son archivos: forman parte del diseño (código).
+
+## ⚙️ Datos de contacto, enlaces y mensajes
+
+Todo está en **`js/config.js`**. Al cambiarlo ahí se actualiza en todo el sitio:
+
+- **WhatsApp:** `whatsapp.number` (solo dígitos con código de país, ej. `593980549220`) y `whatsapp.display` (como se muestra).
+- **Instagram:** usuario, enlace al perfil y las 3 publicaciones (`instagram.posts`).
+- **Calendario:** `calendarEmbedUrl` (agenda incrustada) y `calendarUrl` (abrir en pestaña nueva).
+- **Dirección:** `location.line1`, `location.line2` y `location.mapsUrl`.
+- **Mensajes predeterminados de WhatsApp:** `messages`.
+
+Los **precios** de los planes están escritos en `index.html` (busca `$150`, `$120` y `$100`).
+
+## Instagram («Sígueme en Instagram»)
+
+La sección muestra **3 publicaciones + un botón al perfil**.
+
+- Los enlaces de las publicaciones están en `js/config.js` → `instagram.posts`, en orden.
+- La miniatura de cada una es un archivo: `inicio-instagram-1.webp`, `inicio-instagram-2.webp` e `inicio-instagram-3.webp` (verticales 4:5, como se ven en Instagram).
+- Para cambiar una publicación: cambia su enlace en `config.js` y reemplaza su miniatura.
+- Si falta el archivo de una miniatura, ese recuadro se muestra como un enlace con el ícono de Instagram.
+
+Instagram no permite que una web estática lea las publicaciones automáticamente, por eso las miniaturas son archivos.
+
+## Agenda conmigo
+
+El agendador de Google Calendar está incrustado en la sección **«Agenda conmigo»** del Inicio y de Contacto. Todos los botones «Agendar…» bajan hasta esa sección (desde Ebooks, llevan al Inicio y bajan a la agenda). Debajo del calendario hay un enlace para abrirlo en una pestaña nueva.
 
 ## Agregar un ebook
 
@@ -57,38 +105,27 @@ Abre **`js/ebooks.js`** y agrega un objeto a la lista `EBOOKS` (hay un ejemplo c
   categoria: "Guía",
   descripcion: "Descripción breve.",
   info: ["Formato PDF"],
-  precio: "$XX",                                   // o "" para no mostrar precio
+  precio: "$XX",                                     // o "" para no mostrar precio
   portada: "assets/images/ebooks/guia-ejemplo.webp", // o "" para portada automática
-  estado: "disponible"                             // o "proximamente"
+  estado: "disponible"                               // o "proximamente"
 },
 ```
 
-- Guarda las portadas en `assets/images/ebooks/` (formato vertical 3:4, idealmente WebP).
-- En cuanto exista un ebook sin `demo: true`, las tarjetas de demostración y el bloque «Próximamente» se ocultan automáticamente.
+- Guarda las portadas en `assets/images/ebooks/`.
+- En cuanto exista un ebook sin `demo: true`, las tarjetas de demostración y el bloque «Próximamente» se ocultan solos.
 - El botón «Solicitar por WhatsApp» envía: *"Hola Milenca, estoy interesado/a en adquirir el ebook [NOMBRE]. ¿Podrías darme más información?"*
 
-## Foto de Milenca («Quién soy»)
+## Pendiente
 
-Es lo primero que se ve en el Inicio. Sube una foto vertical (4:5, ~1000×1250 px, idealmente WebP) a `assets/images/` con el nombre **`milenca.webp`** y aparecerá automáticamente. Mientras no exista, se muestra un monograma «M» decorativo.
-
-## Agenda conmigo (calendario incrustado)
-
-El agendador de Google Calendar está incrustado en la sección **«Agenda conmigo»** del Inicio y de Contacto. Su dirección está en `js/config.js` → `calendarEmbedUrl`. Los botones «Agendar consulta» siguen abriendo el calendario en una pestaña nueva (`calendarUrl`).
-
-## Instagram (últimas publicaciones)
-
-Instagram no permite mostrar publicaciones en una web estática sin un servicio intermedio conectado a la cuenta. El sitio está preparado para **Behold** (behold.so):
-
-1. Crea una cuenta en https://behold.so y conecta **@milencanutricion**. Debe ser una cuenta profesional de Instagram (Creador o Empresa), lo cual se cambia gratis desde la configuración de Instagram.
-2. Crea un feed, elige el diseño (por ejemplo, cuadrícula de 4 o 6 publicaciones) y copia su **Feed ID**.
-3. Pégalo en `js/config.js` → `instagramFeed.feedId` y sube el archivo.
-
-Las publicaciones se actualizan solas. Mientras `feedId` esté vacío, la sección muestra un bloque con imágenes de la marca que enlaza al perfil.
+| Dato | Dónde |
+|---|---|
+| Texto de presentación de Milenca | `index.html`, comentario `✏️ TEXTO DE PRESENTACIÓN EDITABLE` |
+| Ebooks (nombres, precios, portadas) | `js/ebooks.js` |
+| Fotos de «Mi enfoque», del cierre y de «Próximamente» | Son de baja resolución (salen del recetario impreso); conviene reemplazarlas |
 
 ## SEO y redes sociales
 
-- Cada página tiene título, meta description, Open Graph y datos estructurados (Schema.org) con la ubicación en Samborondón.
-- Cuando conozcas la URL final, conviene reemplazar `assets/images/og-image.jpg` en las etiquetas `og:image` / `twitter:image` por la URL absoluta (ej.: `https://usuario.github.io/milenca-nutricion/assets/images/og-image.jpg`) para que la vista previa aparezca en WhatsApp y redes.
+Cada página tiene título, descripción, Open Graph y datos estructurados con la ubicación en Samborondón. Cuando conozcas la URL final, conviene reemplazar `assets/images/general-compartir-enlace.jpg` en las etiquetas `og:image` / `twitter:image` de los tres `.html` por la URL completa (ej.: `https://usuario.github.io/milenca-nutricion/assets/images/general-compartir-enlace.jpg`), para que la vista previa aparezca al compartir el enlace.
 
 ## Vista previa local
 

@@ -7,33 +7,33 @@
   <meta name="description" content="Contacta a Milenca Nutrición: consulta nutricional presencial en Arcos Plaza 2, Samborondón, u online. Escríbeme por WhatsApp o agenda tu consulta.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Milenca Nutrición">
-  <meta name="theme-color" content="#2A3E3F">
+  <meta name="theme-color" content="#00483D">
 
   <!-- Open Graph / redes sociales.
        Al publicar, puedes reemplazar las rutas relativas de og:image por la URL absoluta
-       (ej.: https://usuario.github.io/repositorio/assets/images/og-image.jpg). Ver README. -->
+       (ej.: https://usuario.github.io/repositorio/assets/images/general-compartir-enlace.jpg). Ver README. -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_EC">
   <meta property="og:site_name" content="Milenca Nutrición">
   <meta property="og:title" content="Conectemos | Milenca Nutrición">
   <meta property="og:description" content="Contacta a Milenca Nutrición: consulta nutricional presencial en Arcos Plaza 2, Samborondón, u online. Escríbeme por WhatsApp o agenda tu consulta.">
-  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:image" content="assets/images/general-compartir-enlace.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Milenca Nutrición · Nutrición funcional y digestiva en Samborondón y online">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Conectemos | Milenca Nutrición">
   <meta name="twitter:description" content="Contacta a Milenca Nutrición: consulta nutricional presencial en Arcos Plaza 2, Samborondón, u online. Escríbeme por WhatsApp o agenda tu consulta.">
-  <meta name="twitter:image" content="assets/images/og-image.jpg">
+  <meta name="twitter:image" content="assets/images/general-compartir-enlace.jpg">
 
-  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" href="assets/icons/general-icono-pestana.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/icons/general-icono-celular.png">
   <link rel="manifest" href="assets/icons/site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&amp;family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&amp;display=swap">
+  <link rel="preload" as="image" href="assets/images/contacto-encabezado.webp" type="image/webp">
   <link rel="stylesheet" href="css/styles.css">
   <script type="application/ld+json">
   {
@@ -42,7 +42,7 @@
     "name": "Milenca Nutrición",
     "description": "Nutricionista en Samborondón. Nutrición funcional y digestiva, consulta nutricional presencial y online, y planes nutricionales personalizados.",
     "medicalSpecialty": "DietNutrition",
-    "image": "assets/images/og-image.jpg",
+    "image": "assets/images/general-compartir-enlace.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Arcos Plaza 2",
@@ -78,7 +78,7 @@
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Milenca Nutrición, ir al inicio">
-      <span class="brand__mark" aria-hidden="true">M</span>
+      <img class="brand__logo" src="assets/images/inicio-logo.png" width="52" height="52" alt="">
       <span class="brand__text">
         <span class="brand__name">Milenca Nutrición</span>
         <span class="brand__tag">Nutrición funcional y digestiva</span>
@@ -95,7 +95,7 @@
         <li><a href="ebooks.html">Ebooks</a></li>
         <li><a href="contacto.html" aria-current="page">Contacto</a></li>
       </ul>
-      <a class="btn btn--primary btn--sm" href="contacto.html" data-calendar>
+      <a class="btn btn--primary btn--sm" href="#agenda">
         <svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg>
         Agendar consulta
       </a>
@@ -105,12 +105,21 @@
 
 <main id="contenido">
 
-  <section class="page-hero" aria-labelledby="contacto-title">
-    <svg class="botanical" aria-hidden="true"><use href="#i-branch"/></svg>
-    <div class="container page-hero__inner">
-      <p class="eyebrow reveal">Contacto</p>
-      <h1 id="contacto-title" class="reveal" data-delay="1">Conectemos</h1>
-      <p class="lead reveal" data-delay="2">Estoy aquí para acompañarte en tu proceso de bienestar. Puedes escribirme para conocer mis servicios, resolver tus dudas o agendar una consulta.</p>
+  <section class="page-hero page-hero--media" aria-labelledby="contacto-title">
+    <div class="container page-hero__grid">
+      <div class="page-hero__inner">
+        <p class="eyebrow reveal">Contacto</p>
+        <h1 id="contacto-title" class="reveal" data-delay="1">Conectemos</h1>
+        <p class="lead reveal" data-delay="2">Estoy aquí para acompañarte en tu proceso de bienestar. Puedes escribirme para conocer mis servicios, resolver tus dudas o agendar una consulta.</p>
+      </div>
+      <div class="page-hero__media reveal" data-delay="2">
+        <svg class="sparkle" aria-hidden="true"><use href="#i-sparkle"/></svg>
+        <div class="page-hero__frame">
+          <!-- ✏️ Imagen del encabezado: assets/images/contacto-encabezado.webp (vertical, mínimo 900 px de ancho) -->
+          <img src="assets/images/contacto-encabezado.webp" width="900" height="1600" fetchpriority="high" style="object-position: 50% 62%"
+               alt="Milenca sonriendo frente a su computadora en el consultorio">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -123,7 +132,7 @@
               <span class="contact-item__icon"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></span>
               <span>
                 <span class="contact-item__label">WhatsApp</span>
-                <span class="contact-item__value" data-config="whatsapp.display">+593 99 999 9999</span>
+                <span class="contact-item__value" data-config="whatsapp.display">+593 98 054 9220</span>
                 <span class="contact-item__hint">Escríbeme para resolver tus dudas</span>
               </span>
             </a>
@@ -228,7 +237,7 @@
     <div class="footer__grid">
       <div class="footer__brand">
         <a class="brand" href="index.html" aria-label="Milenca Nutrición, ir al inicio">
-          <span class="brand__mark" aria-hidden="true">M</span>
+          <img class="brand__logo" src="assets/images/inicio-logo.png" width="52" height="52" alt="">
           <span class="brand__text">
             <span class="brand__name">Milenca Nutrición</span>
             <span class="brand__tag">Nutrición funcional y digestiva</span>
@@ -251,8 +260,8 @@
         <h2 class="footer__title">Contacto</h2>
         <ul class="footer__list">
           <li><a href="contacto.html" data-instagram><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>@milencanutricion</a></li>
-          <li><a href="contacto.html" data-wa="general"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span data-config="whatsapp.display">+593 99 999 9999</span></a></li>
-          <li><a href="contacto.html" data-calendar><svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg>Agendar consulta</a></li>
+          <li><a href="contacto.html" data-wa="general"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span data-config="whatsapp.display">+593 98 054 9220</span></a></li>
+          <li><a href="#agenda"><svg class="icon" aria-hidden="true"><use href="#i-cal"/></svg>Agendar consulta</a></li>
         </ul>
       </div>
 
