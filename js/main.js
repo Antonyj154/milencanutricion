@@ -66,28 +66,17 @@
   window.MILENCA.bindLinks = bindLinks;
   bindLinks(document);
 
-  if (CFG.whatsapp.isPlaceholder) {
-    console.warn("[Milenca] El número de WhatsApp (" + CFG.whatsapp.display + ") es PROVISIONAL. Reemplázalo en js/config.js.");
-  }
-
   /* ---------- Calendario incrustado ("Agenda conmigo") ---------- */
   document.querySelectorAll("iframe[data-calendar-embed]").forEach(function (frame) {
     if (CFG.calendarEmbedUrl) frame.src = CFG.calendarEmbedUrl;
   });
 
-  /* ---------- Feed de Instagram (Behold) ---------- */
-  var igBox = document.getElementById("instagram-feed");
-  var igCfg = CFG.instagramFeed || {};
-  if (igBox && igCfg.provider === "behold" && igCfg.feedId) {
-    var widget = document.createElement("behold-widget");
-    widget.setAttribute("feed-id", igCfg.feedId);
-    igBox.innerHTML = "";
-    igBox.appendChild(widget);
-    var s = document.createElement("script");
-    s.type = "module";
-    s.src = "https://w.behold.so/widget.js";
-    document.head.appendChild(s);
-  }
+  /* ---------- Publicaciones de Instagram (enlaces desde config.js) ---------- */
+  var igPosts = (CFG.instagram && CFG.instagram.posts) || [];
+  document.querySelectorAll("[data-instagram-post]").forEach(function (el) {
+    var url = igPosts[parseInt(el.getAttribute("data-instagram-post"), 10) - 1];
+    if (url) setExternal(el, url);
+  });
 
   /* ---------- Año dinámico ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
